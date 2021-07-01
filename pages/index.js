@@ -32,7 +32,8 @@ const Home = () => {
             <div>
                 Probando hacer un pull request!
             </div>
-            {/* <SearchBar/> */}
+            
+            
 
             <div>
                 <form
