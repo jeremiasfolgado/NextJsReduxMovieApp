@@ -2,17 +2,14 @@ import Container from '../components/container.js';
 import { useSelector } from 'react-redux';
 
 const List = () => {
-    const todos = useSelector(state => state.post.ToDos);
+    
     return (
         <Container>
-            <h1>List page</h1>
-            {
-                todos?.map(todo => (
-                    <div>
-                        {todo.string} {todo.number}
-                    </div>
-                ))
-            }
+            
+           <h1>Sos re pro</h1>
+           <span>un poco de txto en la pantalla es medio como cualca esto</span>
+
+      
         </Container>
     )
 }

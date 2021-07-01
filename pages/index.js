@@ -2,6 +2,7 @@ import Container from '../components/container.js';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { postTodo } from '../store/actions/postActions.js';
+import SearchBar from '../components/searchBar.js';
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -31,6 +32,7 @@ const Home = () => {
             <div>
                 Probando hacer un pull request!
             </div>
+            {/* <SearchBar/> */}
 
             <div>
                 <form
