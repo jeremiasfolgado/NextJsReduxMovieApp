@@ -1,28 +1,13 @@
 import Container from '../components/container.js';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { postTodo } from '../store/actions/postActions.js';
-import SearchBar from '../components/searchBar.js';
+import { useDispatch, useSelector } from 'react-redux';
+import Cards from '../components/Cards.js';
+
+
 
 const Home = () => {
     const dispatch = useDispatch();
-
-    const [state, setState] = useState({
-        string: '',
-        number: ''
-    })
-
-    const handleChange = (event) => {
-        setState({
-            ...state,
-            [event.target.name]: event.target.value
-        })
-    }
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        dispatch(postTodo(state));
-    }
+    const moviesResult = useSelector(state => state.get.searchResult)
+    
 
     return (
         <Container>
@@ -32,28 +17,10 @@ const Home = () => {
             <div>
                 Probando hacer un pull request!
             </div>
-            
-            
+            <Cards/>
 
-            <div>
-                <form
-                    onSubmit={(e) => {handleSubmit(e)}}
-                >
-                    <input 
-                        type='text'
-                        name='string'
-                        onChange={(e) => {handleChange(e)}}
-                        value={state.string}
-                    />
-                    <input 
-                        type='number'
-                        name='number'
-                        onChange={(e) => {handleChange(e)}}
-                        value={state.number}  
-                    />
-                    <button type='submit'>submit</button>
-                </form>
-            </div>
+
+            
 
         </Container>
     )

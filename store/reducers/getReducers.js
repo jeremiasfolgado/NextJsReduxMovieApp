@@ -2,7 +2,7 @@ import * as types from '../types';
 
 const initialState = {
    searchResult: [],
-   favouritesMovies: [],
+   favouritesMovies: undefined,
    moviesDetail: undefined
 }
 
@@ -18,6 +18,16 @@ export function getReducer(state = initialState, action) {
             return {
                 ...state,
                 moviesDetail: action.payload
+            }
+        case types.SET_NULL_MOVIE_DETAIL:
+            return {
+                ...state,
+                moviesDetail: null
+            }
+        case types.ADD_MOVIE_FAVORITES:
+            return {
+                ...state,
+                favouritesMovies: [...state.favouritesMovies, action.payload]
             }
            
         default:

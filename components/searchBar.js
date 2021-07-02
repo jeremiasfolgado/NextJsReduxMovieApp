@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {useDispatch} from 'react-redux';
-import {getMoviesDetail} from '../store/actions/getActions'
+import {getMovies} from '../store/actions/getActions'
 
 
 
@@ -10,7 +10,7 @@ const SearchBar = () => {
     
     function handleSubmit(e){
         e.preventDefault();
-        dispatch(getMoviesDetail(movie));
+        dispatch(getMovies(movie));
         setMovie("")
     }
     return (
