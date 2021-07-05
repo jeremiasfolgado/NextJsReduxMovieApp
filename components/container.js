@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import Nav from './nav.js';
+import Footer from './Footer.js';
 
-import SearchBar from './searchBar.js';
+
 
 const Container = (props) => {
     return (
@@ -10,16 +11,14 @@ const Container = (props) => {
                 <title>NextJS-Redux Movie App</title>
                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css'/>
             </Head>
-            <Nav>
-            </Nav>
-            
+            <Nav/>
             <div className=" p-4">
                 {props.children}
             </div>
-
-            
+            <Footer/>
         </div>
     )
 }
 
 export default Container;
+            

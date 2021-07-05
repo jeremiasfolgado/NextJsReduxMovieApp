@@ -1,12 +1,17 @@
 import * as types from '../types';
 import axios from 'axios';
 
+
+
+
+
 export const getMovies =  (arg) => {
     
     return  (dispatch) => {
-        return  axios.get(`http://www.omdbapi.com/?apikey=20dac387&s=${arg}`)
+        return  axios.get(`http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_API_KEY}&s=${arg}`)
                 .then(response => {
-                    console.log("en la call",response.data)
+                    console.log("en la llamada", process.env.NEXT_PUBLIC_ALGO)
+                    console.log("en la llamada DOS", process.env.NEXT_PRIVATE_KEY)
                     dispatch({
                         type: types.GET_MOVIES,
                         payload: response.data.Search
@@ -19,7 +24,7 @@ export const getMovies =  (arg) => {
 
 export const getMovieDetail = (arg) => {
     return  (dispatch) => {
-        return  axios.get(`http://www.omdbapi.com/?apikey=20dac387&i=${arg}`)
+        return  axios.get(`http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_API_KEY}&i=${arg}`)
                 .then(response => {
                     //console.log("en la call",response.data)
                     if (response.data.Response === "False"){

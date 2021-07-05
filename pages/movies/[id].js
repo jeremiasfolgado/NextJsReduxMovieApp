@@ -11,7 +11,7 @@ const MovieDetails = ()=>{
     const {id} = router.query
     const movie = useSelector(state => state.get.moviesDetail) 
 
-    console.log("soy movie", movie)
+    
     useEffect(()=>{
         if(id)dispatch(getMovieDetail(id))
     }, [dispatch, id])
@@ -68,7 +68,7 @@ const MovieDetails = ()=>{
                         </div>
 
                     </div>
-                    <button className="btn btn-warning mt-4 col-md-2" onClick={e => Router.push('/')}>Home</button>
+                 
                
         </Container>
     )
