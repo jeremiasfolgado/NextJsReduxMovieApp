@@ -4,22 +4,28 @@ import { addMovieToFavorites } from "../store/actions/getActions";
 
 const CardMovie = ({movie}) => {
    const dispatch = useDispatch()
-    return (
-        <div>
+   //console.log("aca en cards", movie) 
+   return (
+        <div >
             <li 
-            className="list-group-item list-group-item-action d-flex justify-content-between align-items-center" 
+            className="card list-group-item-action " 
             key={movie.imdbID}
+            onClick={e => Router.push('/movies/[id]', `/movies/${movie.imdbID}`)}
             
             >
-                <div>
-                    <h5 onClick={e => Router.push('/movies/[id]', `/movies/${movie.imdbID}`)}>{movie.Title} </h5>
-                    <span>{movie.Year}</span>
-                    <span>{movie.Type}</span>
-                </div>
-                <img src={movie.Poster} alt="Picture Poster"></img>
-            </li>
+                <img src={movie.Poster} alt="Picture Poster" className="card-img-top"></img>
+                
 
-            {/* <button onClick={() => dispatch(addMovieToFavorites(movie)) }>Add to favorites</button> */}
+                <div className="card-body">
+                    <h5 className="card-title">{movie.Title} </h5>
+                    
+                    <span className="card-text">{`${movie.Type} - year ${movie.Year}`}</span>
+                </div>
+                
+                
+            </li>
+               
+            {/* <div onClick={() => dispatch(addMovieToFavorites(movie)) } key={movie.imdbID}>Add to favorites</div> */}
         </div>
     )
 }

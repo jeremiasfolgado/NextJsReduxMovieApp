@@ -10,14 +10,14 @@ const Home = () => {
     
 
     return (
-        <Container>
+        <Container >
 
-            <h1>Home</h1>
+            <div className="mx-auto"  >
+                
+                <Cards/>
+                
 
-            <div>
-                Probando hacer un pull request!
             </div>
-            <Cards/>
 
 
             

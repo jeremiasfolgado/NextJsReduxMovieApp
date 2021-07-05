@@ -1,8 +1,9 @@
 import { useRouter } from "next/router";
+import Router from "next/router"
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Container from "../../components/container"
-import { getMovieDetail } from "../../store/actions/getActions";
+import { getMovieDetail,addMovieToFavorites } from "../../store/actions/getActions";
 
 const MovieDetails = ()=>{
     const router = useRouter()
@@ -10,7 +11,7 @@ const MovieDetails = ()=>{
     const {id} = router.query
     const movie = useSelector(state => state.get.moviesDetail) 
 
-    //console.log("soy movie", movie)
+    console.log("soy movie", movie)
     useEffect(()=>{
         if(id)dispatch(getMovieDetail(id))
     }, [dispatch, id])
@@ -30,20 +31,45 @@ const MovieDetails = ()=>{
     }
     return (
         <Container>
-            <div className="row">
-                <div className="col-md-6 offset-md-3">
-                    <div className="card">
-                        <div className="card-header text-center">
-                           <img src={movie.Poster}/>
-                        </div>
-                        <div className="card-body">
-                            <h5 className="card-title">{movie.Title}</h5>
+            
+                    <div className=" card  p-2 mx-auto col-md-10 d-flex flex-row justify-content-around align-items-around flex-wrap text-dark">
+                           <div className="col-md-4 col-sm-10">
+                                <img src={movie.Poster} className="img-fluid img-thumbnail " />
+                                <div>
+                                    <span className="badge rounded-pill bg-warning text-dark p-2 m-1">imdb Rating {movie.imdbRating}</span>
+                                    {movie.Ratings && movie.Ratings.map(rating=> (<span className="badge rounded-pill bg-warning text-dark p-2 m-1">{`${rating.Source} ${rating.Value}`}</span>))}
+                                </div>
+                                <div className="btn btn-dark m-2 " onClick={() => dispatch(addMovieToFavorites(movie)) }>Add to favorites</div>
+
+                           </div>
+
+                        
+                        <div className="col-md-5 card p-2 col-sm-10">
+                            <h5 className="card-title mt-4">{movie.Title}</h5>
+                            <span className="card-text">{movie.Plot}</span>
+                            
+                            <h5 className="card-title mt-2">Genre</h5>
+                            <span className="card-text">{movie.Genre}</span>
+                            <h5 className="card-title mt-2">Actors</h5>
+                            <span className="card-text">{movie.Actors}</span>
+                            <h5 className="card-title mt-2">Director</h5>
+                            <span className="card-text">{movie.Director}</span>
+                            <h5 className="card-title mt-2">Writer/s</h5>
+                            <span className="card-text">{movie.Writer}</span>
+                            <h5 className="card-title mt-2">Rated</h5>
+                            <span className="card-text">{movie.Rated}</span>
+                            <h5 className="card-title mt-2">Awards</h5>
+                            <span className="card-text">{movie.Awards}</span>
+                            <h5 className="card-title mt-2">Runtime</h5>
+                            <span className="card-text">{movie.Runtime}</span>
+                            <h5 className="card-title mt-2">Country</h5>
+                            <span className="card-text">{movie.Country}</span>
 
                         </div>
 
                     </div>
-                </div>
-            </div>
+                    <button className="btn btn-warning mt-4 col-md-2" onClick={e => Router.push('/')}>Home</button>
+               
         </Container>
     )
 }

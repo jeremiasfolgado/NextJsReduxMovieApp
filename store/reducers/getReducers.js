@@ -1,7 +1,7 @@
 import * as types from '../types';
 
 const initialState = {
-   searchResult: [],
+   searchResult: undefined,
    favouritesMovies: undefined,
    moviesDetail: undefined
 }
@@ -25,10 +25,22 @@ export function getReducer(state = initialState, action) {
                 moviesDetail: null
             }
         case types.ADD_MOVIE_FAVORITES:
+            
+            if(Array.isArray(state.favouritesMovies))  {
+                if(!!state.favouritesMovies.find(movie=> movie.Title === action.payload.Title)){
+                    return state;
+                }   
+                }
+           
             return {
                 ...state,
-                favouritesMovies: [...state.favouritesMovies, action.payload]
+                favouritesMovies: state.favouritesMovies !== undefined ? [...state.favouritesMovies, action.payload] : [action.payload]
             }
+        case types.REMOVE_FAVORITES:
+            return {
+                ...state,
+                favouritesMovies: state.favouritesMovies.filter(movie=> movie.imdbID !== action.payload.imdbID )
+            }   
            
         default:
             return state;

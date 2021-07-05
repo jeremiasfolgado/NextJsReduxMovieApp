@@ -6,7 +6,7 @@ export const getMovies =  (arg) => {
     return  (dispatch) => {
         return  axios.get(`http://www.omdbapi.com/?apikey=20dac387&s=${arg}`)
                 .then(response => {
-                    console.log(response.data.Search)
+                    console.log("en la call",response.data)
                     dispatch({
                         type: types.GET_MOVIES,
                         payload: response.data.Search
@@ -21,7 +21,7 @@ export const getMovieDetail = (arg) => {
     return  (dispatch) => {
         return  axios.get(`http://www.omdbapi.com/?apikey=20dac387&i=${arg}`)
                 .then(response => {
-                   // console.log(response.data)
+                    //console.log("en la call",response.data)
                     if (response.data.Response === "False"){
                         dispatch({
                             type: types.SET_NULL_MOVIE_DETAIL
@@ -39,6 +39,10 @@ export const getMovieDetail = (arg) => {
 }
 
 export const addMovieToFavorites = (payload) => {
-    console.log(payload)
+    
     return {type: types.ADD_MOVIE_FAVORITES, payload: payload}
+}
+
+export const removeFavorites = (payload) => {
+    return {type: types.REMOVE_FAVORITES, payload: payload}
 }

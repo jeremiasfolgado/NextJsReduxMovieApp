@@ -16,7 +16,7 @@ const SearchBar = () => {
     return (
         <div>
 
-            <form onSubmit={e=>{handleSubmit(e)}}>
+            <form onSubmit={e=>{handleSubmit(e)}} className="d-flex flex-row">
                 <input className="form-control me-2" type='text' autoComplete='off' value={movie} onChange={e=>setMovie(e.target.value)}   ></input>
                 <button type='submit' className="btn btn-outline-success">Search</button>
 
