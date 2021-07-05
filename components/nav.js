@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 
 export function Nav(){
    const router = useRouter()
-   console.log(router.pathname)
+   
 
     
     return(

@@ -9,7 +9,7 @@ const CardMovie = ({movie}) => {
         <div >
             <li 
             className="card list-group-item-action " 
-            key={movie.imdbID}
+            
             onClick={e => Router.push('/movies/[id]', `/movies/${movie.imdbID}`)}
             >
             

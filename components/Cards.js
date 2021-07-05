@@ -23,7 +23,7 @@ const Cards = () => {
  return (
      <ul className=" d-flex flex-row flex-wrap justify-content-center align-items-center min-vw-90 ">
          {moviesResult && moviesResult.map(movie => (
-         <div className="card p-2 m-1 col-md-3" >
+         <div className="card p-2 m-1 col-md-3 " key={movie.imdbID}>
              
              <CardMovie movie={movie}/>
              

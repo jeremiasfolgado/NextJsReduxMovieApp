@@ -10,8 +10,7 @@ export const getMovies =  (arg) => {
     return  (dispatch) => {
         return  axios.get(`http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_API_KEY}&s=${arg}`)
                 .then(response => {
-                    console.log("en la llamada", process.env.NEXT_PUBLIC_ALGO)
-                    console.log("en la llamada DOS", process.env.NEXT_PRIVATE_KEY)
+                   
                     dispatch({
                         type: types.GET_MOVIES,
                         payload: response.data.Search

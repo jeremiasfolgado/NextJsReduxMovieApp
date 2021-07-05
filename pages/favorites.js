@@ -28,10 +28,10 @@ const Favorites = () => {
         <Container>
             <ul className=" d-flex flex-row flex-wrap justify-content-around ">
                 {favoritesInMemory && favoritesInMemory.map(movie => (
-                    <li className="card p-2 m-3 col-md-3 mx-auto" key={movie.imdbID}>
+                    <div className="card p-2 m-3 col-md-3 mx-auto" key={movie.imdbID}>
                         <CardMovie movie={movie}/>
                         <button className="btn btn-dark m-2 " onClick={() => dispatch(removeFavorites(movie)) }>Remove from favorites</button>
-                    </li>
+                    </div>
                     
                 ))}
 

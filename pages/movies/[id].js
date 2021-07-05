@@ -32,12 +32,12 @@ const MovieDetails = ()=>{
     return (
         <Container>
             
-                    <div className=" card  p-2 mx-auto col-md-10 d-flex flex-row justify-content-around align-items-around flex-wrap text-dark">
+                    <div className=" card  p-2 mx-auto col-md-10 d-flex flex-row justify-content-around align-items-around flex-wrap text-dark" key={movie.imdbID}>
                            <div className="col-md-4 col-sm-10">
                                 <img src={movie.Poster} className="img-fluid img-thumbnail " />
                                 <div>
                                     <span className="badge rounded-pill bg-warning text-dark p-2 m-1">imdb Rating {movie.imdbRating}</span>
-                                    {movie.Ratings && movie.Ratings.map(rating=> (<span className="badge rounded-pill bg-warning text-dark p-2 m-1">{`${rating.Source} ${rating.Value}`}</span>))}
+                                    {movie.Ratings && movie.Ratings.map(rating=> (<span className="badge rounded-pill bg-warning text-dark p-2 m-1" key={rating.Value}>{`${rating.Source} ${rating.Value}`}</span>))}
                                 </div>
                                 <div className="btn btn-dark m-2 " onClick={() => dispatch(addMovieToFavorites(movie)) }>Add to favorites</div>
 
