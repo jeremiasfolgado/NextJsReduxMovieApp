@@ -8,17 +8,27 @@ import styled from 'styled-components';
 const NavBar = styled.div`
 width: 100%;
 display: flex;
-
-justify-content: space-between;
+justify-content: space-around;
 align-items: center;
 flex-wrap: wrap;
-height: 5rem;
+
+height: 4rem;
 border-bottom: 1px solid black;
+@media (max-width:500px){
+    height: 9rem;
+}
+
 `
 const ActionLInks = styled.div`
-min-width: 40%;
+width: 40%;
 display: flex;
+
 justify-content: space-around;
+@media (max-width: 500px){
+    width: 100%;
+    padding-top: 1.4rem;
+    align-items: center;
+} 
 
 `
 

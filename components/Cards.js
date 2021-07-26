@@ -12,17 +12,32 @@ display: flex;
 justify-content: space-between;
 flex-wrap:wrap;
 margin: auto;
+margin-top: 2rem;
+margin-bottom: 2rem;
+@media (max-width: 500px){
+    width: 100%;
+    justify-content: center;
+    
+    
+
+}
 
 `
 const CardStylus = styled.div`
 width:300px;
 height: 550px;
-border: 1px solid black;
+border: 1px solid #ffff;
+border-radius: 1rem;
+box-shadow: 0 0 20px rgba(33,33,33,.2);
 margin:0.5rem;
 display:flex;
 flex-direction: column;
 justify-content: space-between;
 align-items: center;
+&:hover{
+    cursor:pointer;
+}
+
 
 `
 

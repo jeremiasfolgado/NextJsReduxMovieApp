@@ -5,10 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 import Container from "../../components/container"
 import { getMovieDetail,addMovieToFavorites } from "../../store/actions/getActions";
 import styled from "styled-components";
+import axios from "axios";
 
 const DetailContainer = styled.div`
 width: 80%;
-
+border: 1px solid #ffff;
+border-radius: 1rem;
+box-shadow: 0 0 20px rgba(33,33,33,.2);
 display: flex;
 margin:auto;
 ` 
@@ -28,7 +31,7 @@ margin-bottom: 2rem;
 `
 
 const InfoContainer = styled.div`
-width: 90%;
+
 
 display: flex;
 flex-direction: column;
@@ -51,34 +54,14 @@ margin-right: 1.2rem;
 
 `
 
-const MovieDetails = ()=>{
-    const router = useRouter()
-    const dispatch = useDispatch()
-    const {id} = router.query
-    const movie = useSelector(state => state.get.moviesDetail) 
-
-    
-    useEffect(()=>{
-        if(id)dispatch(getMovieDetail(id))
-    }, [dispatch, id])
-    
-    if(movie === undefined){
-        return (
-            <Container>
-                <h1>Loading...</h1>
-            </Container>
-        )
-    }else if(movie === null){
-        return (
-            <Container>
-                <h1>the title has not been found</h1>
-            </Container>
-        )
-    }
+const MovieDetails = ({movie})=>{
+   
+  
+   
     return (
         <Container>
             
-                    <DetailContainer key={movie.imdbID}>
+                     <DetailContainer key={movie.imdbID}>
                           
                         
                         <InfoContainer >
@@ -144,7 +127,7 @@ const MovieDetails = ()=>{
                            </ImageAndRating>
 
 
-                    </DetailContainer>
+                    </DetailContainer> 
                  
                
         </Container>
@@ -153,3 +136,15 @@ const MovieDetails = ()=>{
 
 
 export default MovieDetails;
+
+
+export async function getServerSideProps(context){
+    const {params} = context;
+    const {id} = params
+    
+    const callDetail = await axios.get(`https://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_API_KEY}&i=${id}`)
+    
+    
+    return {props: {movie: callDetail.data }
+}
+}
