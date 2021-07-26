@@ -8,7 +8,7 @@ import axios from 'axios';
 export const getMovies =  (arg) => {
     
     return  (dispatch) => {
-        return  axios.get(`http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_API_KEY}&s=${arg}`)
+        return  axios.get(`https://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_API_KEY}&s=${arg}`)
                 .then(response => {
                    
                     dispatch({
@@ -19,6 +19,7 @@ export const getMovies =  (arg) => {
                 .catch(error =>  alert("the title has not been found"))
     }
 }
+
 
 
 export const addMovieToFavorites = (payload) => {
