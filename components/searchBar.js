@@ -5,10 +5,15 @@ import styled from "styled-components";
 import  { useRouter } from "next/router";
 
 const FormStyled = styled.form`
-width: 100%;
+
+width: 40%;
 height: 100%;
 display: flex;
 align-items: center;
+@media (max-width:500px){
+    width: 100%;
+    margin: auto;
+}
 
 `
 
@@ -26,14 +31,14 @@ const SearchBar = () => {
         router.push("/")
     }
     return (
-        <div>
+        
 
             <FormStyled onSubmit={handleSubmit} >
-                <input className="form-control me-2" type='text' autoComplete='off' value={movie} onChange={e=>setMovie(e.target.value)}   ></input>
-                <button type='submit' className="btn btn-dark">Search</button>
+                <input  value={movie} onChange={e=>setMovie(e.target.value)}   ></input>
+                <button type='submit'>Search</button>
 
             </FormStyled>
-        </div>
+        
     )
 }
 export default SearchBar;

@@ -4,11 +4,12 @@ import { useRouter } from 'next/router';
 import styled from 'styled-components';
 
 const AboutContainer = styled.div`
-width: 100%;
+width: 80%;
 min-height: 100%;
 display: flex;
 flex-direction: column;
 align-items: center;
+margin: auto;
 `
 const ButtonContainer = styled.div`
 display: flex;
@@ -33,15 +34,16 @@ const List = () => {
             
             <AboutContainer >
                 
-                <h1 >Hola Bienvenidos a mi aplicación de Movies</h1>
-                <span></span>
-
-                <span className=" mt-3">If you want to know more about me ...</span>
+                <h1 >Hi there! welcome to my app</h1>
+                <span>This project was developed in order to learn Next js. 
+                    How server side rendering works, props handling. And understand what are the strengths of this technology. If you want to know more about me or my code </span>
                 <ButtonContainer>
                     <button onClick={handleLinkedIn} >LinkedIn</button>
                     <button onClick={handleGithub}>GitHub</button>
 
                 </ButtonContainer>
+                
+
                 
                    
             </AboutContainer>
