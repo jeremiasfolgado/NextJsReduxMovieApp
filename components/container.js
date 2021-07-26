@@ -20,10 +20,8 @@ const Container = (props) => {
         <div>
             <Head>
                 <title>NextJS-Redux Movie App</title>
-                <style>
-                    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap');
-                </style> 
-                <link rel="stylesheet" href="../styles/global.css"></link>
+                
+                
                 
                 
             </Head>
