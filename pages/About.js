@@ -1,21 +1,50 @@
 import Container from '../components/container.js';
 import { useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
+import styled from 'styled-components';
+
+const AboutContainer = styled.div`
+width: 100%;
+min-height: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+`
+const ButtonContainer = styled.div`
+display: flex;
+margin-top: 2rem;
+flex-wrap: wrap;
+`
+
 
 const List = () => {
+    const router = useRouter()
+
+    const handleGithub = ()=> {
+        router.push("https://www.github.com/jeremiasfolgado")
     
+    }
+    const handleLinkedIn = ()=> {
+        router.push("https://www.linkedin.com/in/jeremias-folgado-fullstack-developer/")
+    
+    }
     return (
         <Container>
             
-            <div className="vw-90 vh-100 d-flex flex-column justify-content-center align-items-center">
-                <div className=" text-center col-md-5 p-3 border border-warning border-3  rounded-3">
-                    <h1 className="text-warning font-monospace" >Hi! This App was developed in order to learn how to use NextJS and Redux</h1>
+            <AboutContainer >
+                
+                <h1 >Hola Bienvenidos a mi aplicación de Movies</h1>
+                <span></span>
 
-                </div>
                 <span className=" mt-3">If you want to know more about me ...</span>
-                <a href="https://www.linkedin.com/in/jeremias-folgado-fullstack-developer/" className="btn btn-warning mt-4 col-md-2" >LinkedIn</a>
-                <a href="https://www.github.com/jeremiasfolgado" className="btn btn-warning mt-4 col-md-2" >GitHub</a>
+                <ButtonContainer>
+                    <button onClick={handleLinkedIn} >LinkedIn</button>
+                    <button onClick={handleGithub}>GitHub</button>
+
+                </ButtonContainer>
+                
                    
-            </div>
+            </AboutContainer>
 
 
     </Container>

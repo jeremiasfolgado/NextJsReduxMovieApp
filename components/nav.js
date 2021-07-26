@@ -3,6 +3,24 @@ import SearchBar from './searchBar.js';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useRouter } from "next/router";
+import styled from 'styled-components';
+
+const NavBar = styled.div`
+width: 100%;
+display: flex;
+
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+height: 5rem;
+border-bottom: 1px solid black;
+`
+const ActionLInks = styled.div`
+min-width: 40%;
+display: flex;
+justify-content: space-around;
+
+`
 
 
 
@@ -14,11 +32,8 @@ export function Nav(){
 
     
     return(
-        <nav className="navbar navbar-expand-lg navbar-light bg-light ">
-        <div className="container-fluid d-flex flex-wrap">
-           
-            
-                <div className="navbar-nav p-2 d-flex flex-row flex-wrap justify-content-arounds col-md-6">
+        <NavBar >
+              <ActionLInks>
                     <Link href="/">
                         <a className={`m-1 nav-link ${router.pathname === '/' && 'active'}`} aria-current="page" >Home </a>
                     </Link>
@@ -28,20 +43,24 @@ export function Nav(){
                     <Link href="/About">
                         <a className={`m-1 nav-link ${router.pathname === '/About' && 'active'} `} >About </a>
                     </Link>
-                </div>
-             
+                </ActionLInks>
                 <SearchBar className="w-25"/>
-               
-                    
-          
-        </div>
-    </nav>
+       
+    </NavBar>
     )
 }
 
 
 
 export default Nav;
+           
+            
+              
+             
+               
+                    
+          
+        
 
 
 

@@ -3,6 +3,9 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { createWrapper } from 'next-redux-wrapper';
 import store from '../store/store';
+import { createGlobalStyle, ThemeProvider } from "styled-components";
+import '../styles/globals.css'
+
 
 class MyApp extends App {
     render() {

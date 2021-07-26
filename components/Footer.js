@@ -1,13 +1,25 @@
+import styled from "styled-components";
+
+const FooterContainer = styled.div`
+width: 100%;
+min-height: 4rem;
+border-top: 1px solid black;
+display: flex;
+justify-content: center;
+align-items: center;
+
+`
+
 const Footer = () => {
     return(
-        <footer className="page-footer font-small unique-color-dark pt-4">
+        <FooterContainer className="page-footer font-small unique-color-dark pt-4">
         
-            <div className="footer-copyright text-center py-3">
-              Developed by NextJS-Redux by Jeremias Folgado
+            <strong>
+              Developed with NextJS-Redux by Jeremias Folgado
             
-            </div>
+            </strong>
         
-      </footer>
+      </FooterContainer>
      
 
     )

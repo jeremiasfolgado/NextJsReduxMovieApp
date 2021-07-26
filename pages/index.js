@@ -10,12 +10,12 @@ const Home = () => {
 
     return (
         <Container >
-
             <div className="mx-auto"  >
                 <Cards/>
             </div>
         </Container>
     )
+
 }
 
 export default Home;

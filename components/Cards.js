@@ -1,7 +1,30 @@
 import { useDispatch, useSelector } from "react-redux";
 import CardMovie from "./CardMovie";
 import { addMovieToFavorites, getMovies, removeFavorites } from "../store/actions/getActions";
+import styled from "styled-components";
 
+
+const CardsContainer = styled.div`
+width: 90%;
+max-width: 1200px;
+
+display: flex;
+justify-content: space-between;
+flex-wrap:wrap;
+margin: auto;
+
+`
+const CardStylus = styled.div`
+width:300px;
+height: 550px;
+border: 1px solid black;
+margin:0.5rem;
+display:flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+
+`
 
 
 
@@ -21,16 +44,20 @@ const Cards = () => {
                
 )
  return (
-     <ul className=" d-flex flex-row flex-wrap justify-content-center align-items-center min-vw-90 ">
-         {moviesResult && moviesResult.map(movie => (
-         <div className="card p-2 m-1 col-md-3 " key={movie.imdbID}>
-             
-             <CardMovie movie={movie}/>
-             
-             <button className="btn btn-dark m-2 " onClick={() => dispatch(addMovieToFavorites(movie)) }>Add to favorites</button>
-         </div>
-         ))}
-     </ul>
+    
+          <CardsContainer >
+                {moviesResult && moviesResult.map(movie => (
+                <CardStylus key={movie.imdbID}>
+                    
+                    <CardMovie movie={movie}/>
+                    
+                     <button  onClick={() => dispatch(addMovieToFavorites(movie)) }>Add to favorites</button> 
+                </CardStylus>
+                ))}
+         </CardsContainer>
+
+
+    
  )
 }
 
