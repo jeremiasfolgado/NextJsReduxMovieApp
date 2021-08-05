@@ -35,8 +35,9 @@ const List = () => {
             <AboutContainer >
                 
                 <h1 >Hi there! welcome to my app</h1>
-                <span>This project was developed in order to learn Next js. 
-                    How server side rendering works, props handling. And understand what are the strengths of this technology. If you want to know more about me or my code </span>
+                <span>
+
+This project was developed with Next JS, Redux and Styled-components, it was a very quick project to learn how these technologies worked all together. Because they were the ones used for our graduation project. If you want to know more about me or my code </span>
                 <ButtonContainer>
                     <button onClick={handleLinkedIn} >LinkedIn</button>
                     <button onClick={handleGithub}>GitHub</button>

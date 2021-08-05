@@ -34,7 +34,7 @@ const SearchBar = () => {
         
 
             <FormStyled onSubmit={handleSubmit} >
-                <input  value={movie} onChange={e=>setMovie(e.target.value)}   ></input>
+                <input  value={movie} onChange={e=>setMovie(e.target.value)} placeholder='type title here.'  ></input>
                 <button type='submit'>Search</button>
 
             </FormStyled>

@@ -2,6 +2,8 @@ import Head from 'next/head';
 import Nav from './nav.js';
 import Footer from './Footer.js';
 import styled from 'styled-components';
+import AlertModal from './AlertModal.js';
+import { useSelector } from 'react-redux';
 
 const AppContainer = styled.div`
 
@@ -16,6 +18,7 @@ justify-content: space-between;
 `
 
 const Container = (props) => {
+    const modalAlert = useSelector(state => state.get.alertModal)
     return (
         <div>
             <Head>
@@ -27,9 +30,9 @@ const Container = (props) => {
             </Head>
             <AppContainer >
                 <Nav/>
-                    <div className=" p-4">
+                    {modalAlert && <AlertModal></AlertModal>}
                         {props.children}
-                    </div>
+                   
                 <Footer/>
             </AppContainer>
 
