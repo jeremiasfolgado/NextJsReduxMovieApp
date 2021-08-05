@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Nav from './nav.js';
 import Footer from './Footer.js';
 import styled from 'styled-components';
+import AlertModal from './AlertModal.js';
 
 const AppContainer = styled.div`
 
@@ -27,7 +28,8 @@ const Container = (props) => {
             </Head>
             <AppContainer >
                 <Nav/>
-                    <div className=" p-4">
+                <AlertModal></AlertModal>
+                    <div>
                         {props.children}
                     </div>
                 <Footer/>

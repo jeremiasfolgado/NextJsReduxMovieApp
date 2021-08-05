@@ -27,8 +27,9 @@ const CardStylus = styled.div`
 width:300px;
 height: 550px;
 border: 1px solid #ffff;
+border:1px solid grey;
 border-radius: 1rem;
-box-shadow: 0 0 20px rgba(33,33,33,.2);
+
 margin:0.5rem;
 display:flex;
 flex-direction: column;
@@ -36,6 +37,7 @@ justify-content: space-between;
 align-items: center;
 &:hover{
     cursor:pointer;
+    box-shadow: 0 0 20px rgba(33,33,33,.2);
 }
 
 
@@ -49,9 +51,9 @@ const Cards = () => {
     
     const dispatch = useDispatch()
    if(moviesResult === undefined) return(
-    <div className="vw-90 vh-100 d-flex flex-column justify-content-center align-items-center">
-        <div className=" text-center col-md-5 p-3 border border-warning border-3  rounded-3" >
-            <h1 className="text-warning font-monospace" >This is a series and movies search engine</h1>
+    <div>
+        <div>
+            <h1>Find movies or series</h1>
 
         </div>
     </div>

@@ -3,7 +3,8 @@ import * as types from '../types';
 const initialState = {
    searchResult: undefined,
    favouritesMovies: undefined,
-   moviesDetail: undefined
+   moviesDetail: undefined,
+   alertModal:undefined,
 }
 
 export function getReducer(state = initialState, action) {
@@ -41,6 +42,16 @@ export function getReducer(state = initialState, action) {
                 ...state,
                 favouritesMovies: state.favouritesMovies.filter(movie=> movie.imdbID !== action.payload.imdbID )
             }   
+        case types.SET_ALERT_MODAL:
+            return {
+                ...state,
+                alertModal: action.payload
+            } 
+        case types.REMOVE_MESSAGE_ALERT_MODAL:
+            return {
+                ...state,
+                alertModal: undefined
+            }        
            
         default:
             return state;

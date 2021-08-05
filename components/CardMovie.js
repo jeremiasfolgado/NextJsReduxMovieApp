@@ -35,8 +35,8 @@ const CardMovie = ({movie}) => {
             <CardLayout >
                     <ImageContainer src={movie.Poster} alt="Picture Poster" ></ImageContainer> 
                     <InfoContainer className="card-body">
-                        <h5 className="card-title">{movie.Title} </h5>
-                        <span className="card-text">{`${movie.Type} - year ${movie.Year}`}</span>
+                        <h5>{movie.Title} </h5>
+                        <span >{`${movie.Type} - year ${movie.Year}`}</span>
                     </InfoContainer>
             </CardLayout>
        </Link>
