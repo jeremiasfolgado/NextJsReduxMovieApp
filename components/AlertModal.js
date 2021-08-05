@@ -3,12 +3,13 @@ import styled from "styled-components"
 import {removeAlertMessage} from '../store/actions/getActions'
 
 const AlertContainer = styled.div`
-width:400px;
-height: 250px;
+width:100vw;
+height: 100vh;
 border: 1px solid grey;
 display: flex;
 justify-content: center;
 align-items: center;
+position: relative;
 
 `
 

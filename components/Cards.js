@@ -50,16 +50,7 @@ const Cards = () => {
     const favoritesMovies = useSelector(state => state.get.favouritesMovies)
     
     const dispatch = useDispatch()
-   if(moviesResult === undefined) return(
-    <div>
-        <div>
-            <h1>Find movies or series</h1>
-
-        </div>
-    </div>
-            
-               
-)
+   
  return (
     
           <CardsContainer >
