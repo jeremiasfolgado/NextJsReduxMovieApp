@@ -22,7 +22,7 @@ const Home = () => {
         <Container>
             <HomeContainer>
                 <h1>Find movies or series</h1>
-                <span>Find all the information on any movie or series, just enter the name in the search bar.
+                <span>Find all the information about any movie or series, just enter the name in the search bar.
 
 </span>
     
