@@ -4,43 +4,89 @@ import CardMovie from "./CardMovie";
 import { addMovieToFavorites, getMovies, removeFavorites } from "../store/actions/getActions";
 import styled from "styled-components";
 import Pagination from "./Pagination";
+import { FaHeart } from "react-icons/fa";
+
+
 
 
 const CardsContainer = styled.div`
-width: 90%;
-max-width: 1200px;
+width: 100%;
+max-width: 1300px;
 
 display: flex;
-justify-content: space-between;
 flex-wrap:wrap;
-margin: auto;
+
+
 margin-top: 2rem;
 margin-bottom: 2rem;
-@media (max-width: 500px){
+@media screen and (max-width: 620px){
     width: 100%;
-    justify-content: center;
-    
-    
-
+    flex-direction: column;
+    align-items: center;
 }
-
 `
+    
+    
+
+
 const CardStylus = styled.div`
 width:300px;
-height: 550px;
-border: 1px solid #ffff;
+height: 450px;
 border:1px solid grey;
 border-radius: 1rem;
-
 margin:0.5rem;
 display:flex;
 flex-direction: column;
-justify-content: space-between;
-align-items: center;
+
+
+position: relative;
+
 &:hover{
     cursor:pointer;
-    box-shadow: 0 0 20px rgba(33,33,33,.2);
+    box-shadow: 0 0 20px rgba(33,33,33, 0.5);
 }
+
+
+`
+const AddFavoritesButton = styled.div`
+    position: absolute;
+    bottom:1rem;
+    right: 1rem;
+    border: 2px solid grey;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0.2rem;
+    
+    color:grey;
+   
+    &:hover{
+        color: hotpink;
+        border: 2px solid hotpink;
+
+    }
+
+`
+const RemoveFavorites =  styled.div`
+     position: absolute;
+    bottom:1rem;
+    right: 1rem;
+    border: 2px solid hotpink;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0.2rem;
+    background-color: hotpink;
+    color:white;
+   
+    &:hover{
+        color: grey;
+        background-color: white;
+        border: 2px solid grey;
+
+    }
 
 
 `
@@ -63,7 +109,18 @@ const Cards = ({currentMovies}) => {
                     
                     <CardMovie movie={movie}/>
                     
-                     <button  onClick={() => dispatch(addMovieToFavorites(movie)) }>Add to favorites</button> 
+                   
+                     {favoritesMovies?.find(m=> m.imdbID === movie.imdbID) ? 
+                        <RemoveFavorites onClick={() => dispatch(removeFavorites(movie)) }>
+                            <FaHeart></FaHeart>
+                        </RemoveFavorites> 
+                        : 
+                        <AddFavoritesButton onClick={() => dispatch(addMovieToFavorites(movie)) }>
+                            <FaHeart></FaHeart>
+                        </AddFavoritesButton>
+                        }
+                     
+
                 </CardStylus>
                 ))}
                

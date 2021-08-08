@@ -21,7 +21,7 @@ const Home = () => {
    
     const moviesResult = useSelector(state => state.get.searchResult)
     const [currentPage, setCurrentPage ] = useState(1)
-    const [moviesPerPage] = useState(6) 
+    const [moviesPerPage] = useState(8) 
     const indexOfLastMovie = currentPage * moviesPerPage
     const indexOfFirstMovie =  indexOfLastMovie - moviesPerPage
     const paginate = pageNumber => setCurrentPage(pageNumber)

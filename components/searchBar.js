@@ -6,15 +6,30 @@ import  { useRouter } from "next/router";
 import { GrSearch } from "react-icons/gr";
 
 const FormStyled = styled.form`
-
-width: 40%;
-height: 100%;
-display: flex;
-align-items: center;
-
-
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+`
+const StyledInput = styled.input`
+    text-decoration: none;
+    border: 1px solid grey;
+    font-size: 1rem;
+    padding:0.2rem;
+    color:hotpink;
+`
+const StyledButton = styled.button`
+    text-decoration: none;
+    color: grey;
+    border: 1px solid grey;
+    font-size: 1rem;
+    padding: 0.2rem;
 
 `
+
+
+
+
 
 
 const SearchBar = () => {
@@ -33,8 +48,8 @@ const SearchBar = () => {
         
 
             <FormStyled onSubmit={handleSubmit} >
-                <input  value={movie} onChange={e=>setMovie(e.target.value)} placeholder='type title here.'  ></input>
-                <button type='submit'>Search <GrSearch></GrSearch></button>
+                <StyledInput  value={movie} onChange={e=>setMovie(e.target.value)} placeholder='type title here.'  ></StyledInput>
+                <StyledButton type='submit'> <GrSearch></GrSearch></StyledButton>
 
             </FormStyled>
         

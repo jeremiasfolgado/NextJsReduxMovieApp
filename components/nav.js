@@ -75,6 +75,7 @@ const IconMenuMobile = styled.div`
         display:flex;
         color:grey;
         font-size: 2rem ;
+        padding-right:1rem;
     }
 `
 
