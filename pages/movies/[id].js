@@ -55,7 +55,7 @@ margin-right: 1.2rem;
 `
 
 const MovieDetails = ({movie})=>{
-   
+   const dispatch = useDispatch()
   
    
     return (

@@ -3,6 +3,7 @@ import {useDispatch} from 'react-redux';
 import {getMovies} from '../store/actions/getActions'
 import styled from "styled-components";
 import  { useRouter } from "next/router";
+import { GrSearch } from "react-icons/gr";
 
 const FormStyled = styled.form`
 
@@ -10,10 +11,8 @@ width: 40%;
 height: 100%;
 display: flex;
 align-items: center;
-@media (max-width:500px){
-    width: 100%;
-    margin: auto;
-}
+
+
 
 `
 
@@ -35,7 +34,7 @@ const SearchBar = () => {
 
             <FormStyled onSubmit={handleSubmit} >
                 <input  value={movie} onChange={e=>setMovie(e.target.value)} placeholder='type title here.'  ></input>
-                <button type='submit'>Search</button>
+                <button type='submit'>Search <GrSearch></GrSearch></button>
 
             </FormStyled>
         

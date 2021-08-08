@@ -8,7 +8,7 @@ import axios from 'axios';
 export const getMovies =  (arg) => {
     
     return  (dispatch) => {
-        return  axios.get(`https://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_API_KEY}&s=${arg}`)
+        return  axios.get(`https://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_API_KEY}&s=${arg}&plot=full`)
                 .then(response => {
                    
                     if(response.data.Error){

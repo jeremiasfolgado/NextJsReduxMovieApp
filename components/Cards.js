@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CardMovie from "./CardMovie";
 import { addMovieToFavorites, getMovies, removeFavorites } from "../store/actions/getActions";
 import styled from "styled-components";
+import Pagination from "./Pagination";
 
 
 const CardsContainer = styled.div`
@@ -45,16 +47,18 @@ align-items: center;
 
 
 
-const Cards = () => {
+const Cards = ({currentMovies}) => {
     const moviesResult = useSelector(state => state.get.searchResult)
     const favoritesMovies = useSelector(state => state.get.favouritesMovies)
-    
-    const dispatch = useDispatch()
    
+    const dispatch = useDispatch()
+    
+    
+    
  return (
     
           <CardsContainer >
-                {moviesResult && moviesResult.map(movie => (
+                {currentMovies && currentMovies.map(movie => (
                 <CardStylus key={movie.imdbID}>
                     
                     <CardMovie movie={movie}/>
@@ -62,6 +66,8 @@ const Cards = () => {
                      <button  onClick={() => dispatch(addMovieToFavorites(movie)) }>Add to favorites</button> 
                 </CardStylus>
                 ))}
+               
+
          </CardsContainer>
 
 

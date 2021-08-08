@@ -1,8 +1,9 @@
 import Container from '../components/container.js';
-
+import { useState } from 'react';
 import Cards from '../components/Cards.js';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
+import Pagination from '../components/Pagination.js';
 
 const HomeContainer = styled.div`
 width: 100%;
@@ -17,14 +18,23 @@ align-items: center;
 
 
 const Home = () => {
-    const searchResults = useSelector(state => state.get.searchResult)
-    if(searchResults === undefined) return(
+   
+    const moviesResult = useSelector(state => state.get.searchResult)
+    const [currentPage, setCurrentPage ] = useState(1)
+    const [moviesPerPage] = useState(6) 
+    const indexOfLastMovie = currentPage * moviesPerPage
+    const indexOfFirstMovie =  indexOfLastMovie - moviesPerPage
+    const paginate = pageNumber => setCurrentPage(pageNumber)
+    const currentMovies = !!moviesResult && moviesResult.slice(indexOfFirstMovie, indexOfLastMovie)
+
+
+
+
+    if(moviesResult === undefined) return(
         <Container>
             <HomeContainer>
                 <h1>Find movies or series</h1>
-                <span>Find all the information about any movie or series, just enter the name in the search bar.
-
-</span>
+                <span>Find all the information about any movie or series, just enter the name in the search bar.</span>
     
             </HomeContainer>
         </Container>
@@ -36,8 +46,14 @@ const Home = () => {
     return (
         <Container >
            
-                <Cards/>
-           
+                <Cards currentMovies={currentMovies && currentMovies}/>
+                <Pagination 
+                    moviesPerPage={moviesPerPage}
+                    totalMovies={moviesResult.length}
+                    paginate={paginate}
+                    currentPage={currentPage}
+                />
+
         </Container>
     )
 
