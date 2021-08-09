@@ -173,7 +173,7 @@ const MovieDetails = ({movie})=>{
                     <ImageContainer imgBkg={movie.Poster}></ImageContainer>
                     <InfoContainer>
                         <GenreContainer>
-                            {genres && genres.map(g=> <GenreItem>{g}</GenreItem>)}
+                            {genres && genres.map(g=> <GenreItem key={g}>{g}</GenreItem>)}
                         </GenreContainer>
                         <RowContainer>
                             <strong style={{paddingBottom:'0.5rem'}}>Plot  </strong>
