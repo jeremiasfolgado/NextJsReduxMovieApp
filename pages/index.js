@@ -12,6 +12,7 @@ display:flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+padding: 1rem;
 
 
 `
@@ -33,7 +34,7 @@ const Home = () => {
     if(moviesResult === undefined) return(
         <Container>
             <HomeContainer>
-                <h1>Find movies or series</h1>
+                <h1 style={{marginBottom:'1rem'}}>Find movies or series</h1>
                 <span>Find all the information about any movie or series, just enter the name in the search bar.</span>
     
             </HomeContainer>
