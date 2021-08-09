@@ -46,7 +46,9 @@ const AlertModal = () => {
             <AlertContainer onClick={(e)=> dispatch(removeAlertMessage(e))}>
                 <MessageContainer>
                     <CrossContainer>
-                        <FaTimes></FaTimes>
+                        <FaTimes>
+                            
+                        </FaTimes>
 
                     </CrossContainer>
                     <h2>{alertMessage}</h2>
