@@ -33,11 +33,11 @@ const List = () => {
     const router = useRouter()
 
     const handleGithub = ()=> {
-        router.push("https://www.github.com/jeremiasfolgado")
+        router.push('https://www.github.com/jeremiasfolgado')
     
     }
     const handleLinkedIn = ()=> {
-        router.push("https://www.linkedin.com/in/jeremias-folgado-fullstack-developer/")
+        router.push('https://www.linkedin.com/in/jeremias-folgado-fullstack-developer/')
     
     }
     return (
