@@ -4,7 +4,7 @@ import CardMovie from "../components/CardMovie";
 import Container from "../components/container";
 import {removeFavorites} from '../store/actions/getActions'
 import styled from "styled-components";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 
 const CardsContainer = styled.div`
 width: 100%;

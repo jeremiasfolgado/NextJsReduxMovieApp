@@ -1,5 +1,4 @@
-import Router from "next/router";
-import Image from 'next/image'
+
 import styled from "styled-components";
 import Link from "next/link";
 

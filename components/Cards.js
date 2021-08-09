@@ -1,10 +1,12 @@
-import { useState } from "react";
+
 import { useDispatch, useSelector } from "react-redux";
 import CardMovie from "./CardMovie";
-import { addMovieToFavorites, getMovies, removeFavorites } from "../store/actions/getActions";
+import { addMovieToFavorites, removeFavorites } from "../store/actions/getActions";
 import styled from "styled-components";
-import Pagination from "./Pagination";
+
 import { FaHeart } from "react-icons/fa";
+
+
 
 
 
@@ -12,11 +14,8 @@ import { FaHeart } from "react-icons/fa";
 const CardsContainer = styled.div`
 width: 100%;
 max-width: 1300px;
-
 display: flex;
 flex-wrap:wrap;
-
-
 margin-top: 2rem;
 margin-bottom: 2rem;
 @media screen and (max-width: 620px){
@@ -24,9 +23,13 @@ margin-bottom: 2rem;
     flex-direction: column;
     align-items: center;
 }
+
 `
     
     
+
+
+
 
 
 const CardStylus = styled.div`
@@ -37,10 +40,7 @@ border-radius: 1rem;
 margin:0.5rem;
 display:flex;
 flex-direction: column;
-
-
 position: relative;
-
 &:hover{
     cursor:pointer;
     box-shadow: 0 0 20px rgba(33,33,33, 0.5);
@@ -94,7 +94,7 @@ const RemoveFavorites =  styled.div`
 
 
 const Cards = ({currentMovies}) => {
-    const moviesResult = useSelector(state => state.get.searchResult)
+    
     const favoritesMovies = useSelector(state => state.get.favouritesMovies)
    
     const dispatch = useDispatch()

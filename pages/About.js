@@ -1,7 +1,7 @@
 import Container from '../components/container.js';
-import { useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
+
 
 const AboutContainer = styled.div`
 width: 100%;
@@ -20,11 +20,12 @@ margin-top: 2rem;
 justify-content: space-around;
 `
 const LinkMyProfile = styled.strong`
-
+margin-bottom: 1rem;
 &:hover{
   color: #2E9AFE;
   text-decoration: underline #2E9AFE;
   cursor: pointer;
+  transition: 0.2s ease-in;
 }
 `
 
@@ -45,10 +46,8 @@ const List = () => {
             
             <AboutContainer >
                 
-                <h1 style={{marginBottom:'1rem'}}>Hi there! welcome to my app</h1>
-                <span>
-
-This project was developed with Next JS, Redux and Styled-components, it was a very quick project to learn how these technologies worked all together. Because they were the ones used for our graduation project. If you want to know more about me or my code </span>
+                <h1 style={{marginBottom:'1rem'}}>Hi there! Welcome to my App</h1>
+                <span>This project was developed using Next JS, Redux and Styled-Components. It was a fast building App made in order to learn how these technologies worked all together, as they were the ones used for my programming bootcamp's graduation project. If you want to know more about me or my works, please don't hesitate contacting me through the linked below social networks.</span>
                 <ButtonContainer>
                     <LinkMyProfile onClick={handleLinkedIn} >LinkedIn</LinkMyProfile>
                     <LinkMyProfile onClick={handleGithub}>GitHub</LinkMyProfile>
