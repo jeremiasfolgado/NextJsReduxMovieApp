@@ -25,7 +25,6 @@ margin-bottom: 1rem;
   color: #2E9AFE;
   text-decoration: underline #2E9AFE;
   cursor: pointer;
-  transition: 0.2s ease-in;
 }
 `
 
