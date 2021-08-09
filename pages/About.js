@@ -43,7 +43,7 @@ const List = () => {
             
             <AboutContainer >
                 
-                <h1 style={{marginBottom:'1rem'}}>Hi there! Welcome to my App</h1>
+                <h1 style={{marginBottom:"1rem"}}>Hi there! Welcome to my App</h1>
                 <span>This project was developed using Next JS, Redux and Styled-Components. It was a fast building App made in order to learn how these technologies worked all together, as they were the ones used for my programming bootcamp's graduation project. If you want to know more about me or my works, please don't hesitate contacting me through the linked below social networks.</span>
                 <ButtonContainer>
                     <LinkMyProfile onClick={handleLinkedIn} >LinkedIn</LinkMyProfile>
