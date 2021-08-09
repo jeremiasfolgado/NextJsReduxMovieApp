@@ -28,7 +28,7 @@ const HeaderInfo = styled.div`
     align-items: center;
     padding-right: 1rem;
     @media screen and (max-width:500px){
-        font-size: 0.6rem;
+        font-size: 0.7rem;
         padding-right: 0.7rem;
     }
 `
@@ -90,9 +90,7 @@ const ImageContainer = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     @media screen and (max-width:500px){
-        width:350px;
-
-
+        width:100%;
     }
     
 `

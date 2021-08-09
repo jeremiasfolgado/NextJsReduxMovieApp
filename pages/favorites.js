@@ -47,6 +47,7 @@ min-height: 100%;
 display: flex;
 flex-direction: column;
 align-items: center;
+padding: 1rem;
 `
 const RemoveFavorites =  styled.div`
      position: absolute;
@@ -72,6 +73,14 @@ const RemoveFavorites =  styled.div`
 
 
 `
+const LinkMyProfile = styled.strong`
+
+&:hover{
+  color: #2E9AFE;
+  text-decoration: underline #2E9AFE;
+  cursor: pointer;
+}
+`
 
 const Favorites = () => {
     const favoritesInMemory = useSelector(state => state.get.favouritesMovies)
@@ -79,10 +88,10 @@ const Favorites = () => {
     if(!favoritesInMemory || favoritesInMemory.length === 0) return(
         <Container>
             <MessageContainer >
-                    <h1>find your favorite movies and series</h1>
+                    <h1 style={{marginBottom:'1rem'}}>find your favorite movies and series</h1>
              
                 
-                <button onClick={e => Router.push('/')}>Home</button>
+                <LinkMyProfile onClick={e => Router.push('/')}>Home</LinkMyProfile>
             </MessageContainer>
 
         </Container>
