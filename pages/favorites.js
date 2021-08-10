@@ -88,7 +88,7 @@ const Favorites = () => {
     if(!favoritesInMemory || favoritesInMemory.length === 0) return(
         <Container>
             <MessageContainer >
-                    <h1 style={{marginBottom:'1rem'}}>find your favorite movies and series</h1>
+                    <h1 style={{marginBottom:'1rem'}}>find your favorite Movies and Tv Shows</h1>
              
                 
                 <LinkMyProfile onClick={e => Router.push('/')}>Home</LinkMyProfile>

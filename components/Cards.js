@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import CardMovie from "./CardMovie";
 import { addMovieToFavorites, removeFavorites } from "../store/actions/getActions";
 import styled from "styled-components";
-
 import { FaHeart } from "react-icons/fa";
+
 
 
 
@@ -45,9 +45,9 @@ position: relative;
     cursor:pointer;
     box-shadow: 0 0 20px rgba(33,33,33, 0.5);
 }
-
-
 `
+
+
 const AddFavoritesButton = styled.div`
     position: absolute;
     bottom:1rem;
@@ -66,8 +66,8 @@ const AddFavoritesButton = styled.div`
         border: 2px solid hotpink;
 
     }
-
 `
+
 const RemoveFavorites =  styled.div`
      position: absolute;
     bottom:1rem;
@@ -80,16 +80,16 @@ const RemoveFavorites =  styled.div`
     padding:0.2rem;
     background-color: hotpink;
     color:white;
-   
     &:hover{
         color: grey;
         background-color: white;
         border: 2px solid grey;
 
     }
-
-
+   
 `
+
+
 
 
 
