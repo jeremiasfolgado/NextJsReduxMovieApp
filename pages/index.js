@@ -34,7 +34,7 @@ const Home = () => {
     if(moviesResult === undefined) return(
         <Container>
             <HomeContainer>
-                <h1 style={{marginBottom:'1rem'}}>Find movies or Tv Shows</h1>
+                <h1 style={{marginBottom:'1rem'}}>Find Movies or Tv Shows</h1>
                 <span>Find all the information about any Movie or Tv Show, just enter the name in the search bar.</span>
     
             </HomeContainer>
