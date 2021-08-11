@@ -13,18 +13,24 @@ align-items: center;
 position: absolute;
 top:80px;
 
-background-color: transparent;
+
 
 `
 const MessageContainer = styled.div`
     width:350px;
     height: 200px;
-    border: 1px solid green;
+    border: 1px solid grey;
     display:flex;
     justify-content: center;
     align-items: center;
     background-color: white;
     position:relative;
+    background-color:white;
+    z-index: 80;
+    @media screen and (max-width:500px){
+        width: 100%;
+        height: 100%;
+    }
 `
 const CrossContainer = styled.div`
     position: absolute;
